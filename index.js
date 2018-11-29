@@ -16,7 +16,7 @@ function allPossibleCases(arr) {
       for (var i = 0; i < arr[0].length; i++) {
         if ((arr[0][i] === allCasesOfRest[c]) === false) {
           result.push(
-            "INSERT INTO enmon.item_suggestions(item_id,suggested_item_id) VALUES(" +
+            "INSERT INTO item_suggestions(item_id,suggested_item_id) VALUES(" +
               arr[0][i] +
               "," +
               allCasesOfRest[c] +
@@ -33,7 +33,7 @@ const stri = r.toString();
 const rrr = stri.replace(/,INSERT/g, "INSERT");
 const rr = rrr.replace(/\'/g, "");
 
-fs.writeFile("test.txt", rr, err => {
+fs.writeFile("file.txt", rr, err => {
   if (err) throw err;
   console.log("Saved!");
 });
